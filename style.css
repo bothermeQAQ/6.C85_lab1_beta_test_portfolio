@@ -48,6 +48,14 @@ nav a {
     text-decoration: none;
     color: inherit;
     padding: 0.5em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Navigation Hover Effect */
+nav a:hover {
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: 4px;
 }
 
 /* Current Page Indicator */
