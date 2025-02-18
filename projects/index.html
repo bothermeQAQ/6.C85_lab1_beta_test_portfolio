@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>Projects</title>
+  <!-- Go up one folder to get style.css from the root -->
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <h1><span class="projects-title">Projects</span></h1>
   <section class="projects"></section>
+
+  <!-- Load global.js from the root, so we use ../ -->
   <script type="module" src="../global.js"></script>
-  <script type="module" src="/projects/projects.js"></script>
+  <!-- Load projects.js from the same folder, so we use ./ -->
+  <script type="module" src="./projects.js"></script>
 </body>
 </html>
