@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <h1>Contact</h1>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="index.html" class="current">Contact</a>
-        <a href="../projects/index.html">Projects</a>
-        <a href="../resume/index.html">Resume</a>
-        <a href="https://github.com/bothermeQAQ" target="_blank">GitHub</a>
-    </nav>    
-    <form action="mailto:yonghaowang16@gmail.com" method = "post" enctype="text/plain">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject">
-        <label for="body">Message:</label>
-        <textarea id="body" name="body" rows="1"></textarea>
-        <button type="submit">Submit</button>
-    </form>
+  <h1>Contact</h1>
+  <!-- The contact form: note that method and enctype have been removed -->
+  <form action="mailto:yonghaowang16@gmail.com">
+    <!-- This email field is for display; it will not be included in the mailto URL -->
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required />
+
+    <label for="body">Message:</label>
+    <textarea id="body" name="body" rows="5" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Inline script to intercept the form submission and build a proper mailto URL -->
+  <script>
+    // Get a reference to the form element (if it exists)
+    const form = document.querySelector("form");
+    form?.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Create a FormData object to extract the submitted data
+      const data = new FormData(form);
+      const mailto = form.action;  // The mailto URL from the form's action attribute
+      
+      // Build an array of URL parameters.
+      // Skip the "email" field (it's used for display only, not to prefill the mail body).
+      const params = [];
+      for (let [name, value] of data.entries()) {
+        if (name === "email") continue; // omit the email field from the URL
+        // Use encodeURIComponent() to properly escape the value
+        params.push(`${name}=${encodeURIComponent(value)}`);
+      }
+      
+      // Concatenate the mailto URL with the encoded parameters
+      const url = mailto + "?" + params.join("&");
+      
+      // Set location.href to the constructed URL so that the user's mail client opens
+      location.href = url;
+    });
+  </script>
+
+  <!-- Load global.js as a module; it builds the nav and theme switcher -->
+  <script src="../global.js" type="module"></script>
 </body>
 </html>
