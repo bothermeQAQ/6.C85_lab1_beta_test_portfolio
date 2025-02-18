@@ -2,28 +2,28 @@
     {
       "title": "UCSD CSSA Website",
       "year": "2024",
-      "image": "/images/ucsd_cssa_website.jpg",
+      "image": "images/ucsd_cssa_website.jpg",
       "description": "The official website of UCSD CSSA, providing information on student services, events, and resources.",
       "link": "https://www.ucsdcssa.com/#/home"
     },
     {
       "title": "Project Placeholder One",
       "year": "2023",
-      "image": "/images/ucsd_cssa_website.jpg",
+      "image": "images/ucsd_cssa_website.jpg",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum imperdiet.",
       "link": "https://example.com"
     },
     {
       "title": "Project Placeholder Two",
       "year": "2022",
-      "image": "/images/ucsd_cssa_website.jpg",
+      "image": "images/ucsd_cssa_website.jpg",
       "description": "Random placeholder text goes here. Lorem ipsum dolor sit amet, consectetur.",
       "link": "https://example.org"
     },
     {
       "title": "Project Placeholder Three",
       "year": "2021",
-      "image": "/images/ucsd_cssa_website.jpg",
+      "image": "images/ucsd_cssa_website.jpg",
       "description": "Quisque finibus justo ut venenatis porttitor. Aliquam in odio at velit fringilla.",
       "link": "https://example.com"
     }
